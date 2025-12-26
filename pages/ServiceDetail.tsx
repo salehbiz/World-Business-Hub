@@ -3,9 +3,9 @@ import { SectionHeader, FadeIn, SectionModule, Button, GlassCard } from '../comp
 import { ArrowLeft, CheckCircle2, ArrowRight, Target, Zap, Globe, Layers } from 'lucide-react';
 import { servicesList } from './Services';
 
-// Service Content Database
+// Service Content Database (Updated with Long IDs)
 const serviceContent: Record<string, any> = {
-  'board-advisory': {
+  'board-advisory-and-market-acceleration-services': {
     overview: "In an era of rapid disruption, boards and executive teams face unprecedented challenges. Our Board Advisory & Market Acceleration service provides high-level strategic counsel to ensure robust governance, effective risk management, and aggressive market expansion. We partner with you to identify growth vectors and navigate complex regulatory landscapes.",
     offerings: [
       { title: "Corporate Governance", desc: "Structuring boards for transparency, accountability, and performance." },
@@ -20,7 +20,7 @@ const serviceContent: Record<string, any> = {
       "Resilient long-term growth strategy"
     ]
   },
-  'smart-cities': {
+  'smart-cities-strategic-advisory-services': {
     overview: "We help governments and developers transition from concept to reality in creating cognitive cities. Our advisory goes beyond technology; we focus on creating livable, sustainable, and economically viable urban ecosystems that harness the power of data to improve citizen quality of life.",
     offerings: [
       { title: "Digital Master Planning", desc: "Blueprinting the digital infrastructure of future cities." },
@@ -35,7 +35,7 @@ const serviceContent: Record<string, any> = {
       "Attraction of foreign investment"
     ]
   },
-  'ai-advisory': {
+  'artificial-intelligenceai-advisory-services': {
     overview: "Artificial Intelligence is no longer a luxury; it is a necessity for survival. Our AI Advisory service demystifies the technology, helping organizations separate hype from value. We assist in building AI-ready cultures, data infrastructures, and ethical frameworks to drive automation and innovation.",
     offerings: [
       { title: "AI Readiness Assessment", desc: "Evaluating infrastructure, data, and talent gaps." },
@@ -50,7 +50,7 @@ const serviceContent: Record<string, any> = {
       "Cost reduction through automation"
     ]
   },
-  'keynotes': {
+  'keynotes-and-public-speaking-services': {
     overview: "Dr. Usman Zafar and our team of experts deliver compelling keynotes that inspire and inform. We cover critical topics ranging from the future of work and digital economy to smart city trends. Our sessions are designed to spark dialogue and align organizational vision with global shifts.",
     offerings: [
       { title: "Global Summits", desc: "Keynote addresses for major international conferences." },
@@ -65,7 +65,7 @@ const serviceContent: Record<string, any> = {
       "Actionable strategic insights"
     ]
   },
-  'academic-advisory': {
+  'academic-advisory-accreditation': {
     overview: "We bridge the gap between academia and industry. Our advisory services assist universities and educational institutions in curriculum modernization, obtaining international accreditation, and fostering research partnerships that drive global rankings and student employability.",
     offerings: [
       { title: "Curriculum Development", desc: "Aligning academic programs with future industry needs." },
@@ -80,7 +80,7 @@ const serviceContent: Record<string, any> = {
       "Sustainable academic models"
     ]
   },
-  'fund-raising': {
+  'fund-raising-services': {
     overview: "Securing capital is an art and a science. We support startups, SMEs, and large-scale projects in structuring their investment propositions. By leveraging our global network of VCs, family offices, and institutional investors, we connect you with the right capital partners.",
     offerings: [
       { title: "Investment Readiness", desc: "Refining business models and financial projections." },
@@ -95,7 +95,7 @@ const serviceContent: Record<string, any> = {
       "Enhanced market valuation"
     ]
   },
-  'executive-training': {
+  'executive-training-coaching': {
     overview: "True leadership requires continuous evolution. Our Executive Training & Coaching programs are bespoke interventions designed to unlock the full potential of C-suite executives and high-potential leaders. We focus on strategic thinking, emotional intelligence, and change management.",
     offerings: [
       { title: "C-Suite Mentoring", desc: "One-on-one coaching for top executives." },
@@ -115,9 +115,10 @@ const serviceContent: Record<string, any> = {
 interface ServiceDetailProps {
   serviceId: string;
   onBack: () => void;
+  onNavigate: (page: string) => void;
 }
 
-export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onBack }) => {
+export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onBack, onNavigate }) => {
   const meta = servicesList.find(s => s.id === serviceId);
   const content = serviceContent[serviceId];
 
@@ -220,14 +221,14 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onBack 
          </div>
       </SectionModule>
 
-      {/* --- CTA --- */}
+      {/* --- CTA (Standardized Rule: Non-Contact pages route to Contact Page) --- */}
       <SectionModule>
         <div className="glass-card rounded-[2.5rem] p-12 md:p-16 text-center bg-gradient-to-br from-dark-800 to-dark-900 border border-white/10">
            <h2 className="text-3xl font-bold text-white mb-6 font-sans">Ready to transform your strategy?</h2>
            <p className="text-muted text-lg mb-10 max-w-2xl mx-auto font-light font-sans">
              Schedule a consultation with our experts to discuss how we can tailor our {meta.title} services to your specific needs.
            </p>
-           <Button variant="primary" className="!px-10 !py-4 !rounded-full" onClick={() => window.location.href = 'mailto:info@wbh.ae'}>
+           <Button variant="primary" className="!px-10 !py-4 !rounded-full" onClick={() => onNavigate('contact')}>
              Request Consultation
            </Button>
         </div>

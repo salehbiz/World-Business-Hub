@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Button, FadeIn } from '../components/UI';
-import { Globe, ArrowRight, Zap, TrendingUp, Building2, Mic2, Network, Target } from 'lucide-react';
+import { Globe, Zap, Network, Target } from 'lucide-react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onNavigate: (page: string) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   const [scrollY, setScrollY] = useState(0);
   const [mounted, setMounted] = useState(false);
 
@@ -21,9 +25,9 @@ const Hero: React.FC = () => {
            <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-800"></div>
            <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay"></div>
            
-           {/* Subtle Gold Ambient Glow */}
-           <div className="absolute top-[-20%] right-[-10%] w-[1000px] h-[1000px] bg-gold-500/5 rounded-full blur-[150px]"></div>
-           <div className="absolute bottom-[-20%] left-[-10%] w-[800px] h-[800px] bg-gold-500/3 rounded-full blur-[150px]"></div>
+           {/* Subtle Gold Ambient Glow - Breathing Animation */}
+           <div className="absolute top-[-20%] right-[-10%] w-[1000px] h-[1000px] bg-gold-500/5 rounded-full blur-[150px] animate-pulse-slow"></div>
+           <div className="absolute bottom-[-20%] left-[-10%] w-[800px] h-[800px] bg-gold-500/3 rounded-full blur-[150px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
 
            {/* Slow Orbital Lines */}
            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] rounded-full border border-white/[0.02] opacity-40 animate-spin-slow"></div>
@@ -55,7 +59,7 @@ const Hero: React.FC = () => {
 
               <FadeIn delay={700}>
                 <div className="flex flex-wrap gap-5 mb-12">
-                  <Button variant="primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth'})}>
+                  <Button variant="primary" onClick={() => onNavigate('contact')} className="hover:scale-105 active:scale-95 transition-transform duration-300">
                     Request Consultation
                   </Button>
                   <Button variant="secondary" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth'})}>
@@ -67,10 +71,10 @@ const Hero: React.FC = () => {
               {/* Micro Stats Chips */}
               <FadeIn delay={900}>
                 <div className="flex flex-wrap gap-3">
-                  <div className="pill-chip cursor-default font-sans">
+                  <div className="pill-chip cursor-default font-sans hover:bg-white/10 transition-colors">
                     <Globe size={14} className="text-gold-500"/> Global Reach
                   </div>
-                  <div className="pill-chip cursor-default font-sans">
+                  <div className="pill-chip cursor-default font-sans hover:bg-white/10 transition-colors">
                     <Zap size={14} className="text-gold-500"/> High Impact
                   </div>
                 </div>
@@ -79,10 +83,10 @@ const Hero: React.FC = () => {
 
             {/* RIGHT: Visual Card System (Connected Glass) */}
             <div 
-              className="relative h-[600px] w-full hidden lg:flex items-center justify-center perspective-1000 transition-transform duration-100 ease-out"
+              className="relative h-[450px] lg:h-[600px] w-full flex items-center justify-center perspective-1000 transition-transform duration-100 ease-out mt-12 lg:mt-0"
               style={{ transform: `translateY(${scrollY * 0.05}px)` }}
             >
-              <FadeIn delay={400} className="relative w-full h-full flex items-center justify-center">
+              <FadeIn delay={400} className="relative w-full h-full flex items-center justify-center scale-[0.65] sm:scale-[0.8] md:scale-100">
                 
                 {/* Visual Cluster Container */}
                 <div className="relative w-[420px] h-[480px]">
@@ -94,7 +98,7 @@ const Hero: React.FC = () => {
                   <div className="absolute top-6 right-6 w-[340px] h-[400px] bg-gradient-to-br from-white/[0.04] to-transparent rounded-[2rem] border border-white/[0.06] backdrop-blur-[4px] transform -rotate-[4deg] translate-x-[-10px] animate-float-delayed z-10 opacity-70"></div>
 
                   {/* Layer 3: Main Front Panel (Focus) */}
-                  <div className="absolute top-10 right-10 w-[360px] h-[360px] rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.01] backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center animate-float z-20 group">
+                  <div className="absolute top-10 right-10 w-[360px] h-[360px] rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.01] backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center animate-float z-20 group hover:scale-[1.02] transition-transform duration-700">
                      
                      {/* Ambient Glow Inside Card */}
                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gold-500/10 rounded-full blur-[40px] group-hover:bg-gold-500/20 transition-colors duration-700"></div>
@@ -110,7 +114,7 @@ const Hero: React.FC = () => {
 
                         {/* Node 1: Network */}
                         <div className="flex flex-col items-center gap-3">
-                           <div className="w-14 h-14 rounded-2xl bg-dark-800/50 border border-gold-500/20 flex items-center justify-center text-gold-500 shadow-lg backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+                           <div className="w-14 h-14 rounded-2xl bg-dark-800/50 border border-gold-500/20 flex items-center justify-center text-gold-500 shadow-lg backdrop-blur-sm group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-dark-950 transition-all duration-500">
                               <Network size={22} />
                            </div>
                            <span className="text-[10px] uppercase tracking-widest text-white/70 font-semibold font-sans">Network</span>
@@ -118,7 +122,7 @@ const Hero: React.FC = () => {
 
                         {/* Node 2: Global */}
                         <div className="flex flex-col items-center gap-3">
-                           <div className="w-14 h-14 rounded-2xl bg-dark-800/50 border border-gold-500/20 flex items-center justify-center text-gold-500 shadow-lg backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+                           <div className="w-14 h-14 rounded-2xl bg-dark-800/50 border border-gold-500/20 flex items-center justify-center text-gold-500 shadow-lg backdrop-blur-sm group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-dark-950 transition-all duration-500 delay-100">
                               <Globe size={22} />
                            </div>
                            <span className="text-[10px] uppercase tracking-widest text-white/70 font-semibold font-sans">Global</span>
@@ -126,7 +130,7 @@ const Hero: React.FC = () => {
 
                          {/* Node 3: Impact */}
                         <div className="col-span-2 flex flex-col items-center gap-3 mt-2">
-                           <div className="w-14 h-14 rounded-2xl bg-dark-800/50 border border-gold-500/20 flex items-center justify-center text-gold-500 shadow-lg backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+                           <div className="w-14 h-14 rounded-2xl bg-dark-800/50 border border-gold-500/20 flex items-center justify-center text-gold-500 shadow-lg backdrop-blur-sm group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-dark-950 transition-all duration-500 delay-200">
                               <Target size={22} />
                            </div>
                            <span className="text-[10px] uppercase tracking-widest text-white/70 font-semibold font-sans">Impact</span>
@@ -136,7 +140,7 @@ const Hero: React.FC = () => {
 
                   {/* Anchored Badge: "Trusted Advisory" */}
                   <div className="absolute bottom-6 -left-6 z-30 animate-float-delayed">
-                     <div className="glass-module px-6 py-3 rounded-full border border-gold-500/20 flex items-center gap-3 backdrop-blur-xl bg-dark-900/80 shadow-2xl hover:border-gold-500/40 transition-colors">
+                     <div className="glass-module px-6 py-3 rounded-full border border-gold-500/20 flex items-center gap-3 backdrop-blur-xl bg-dark-900/80 shadow-2xl hover:border-gold-500/40 transition-all hover:scale-105 cursor-default">
                        <div className="relative flex h-2 w-2">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-500 opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-500"></span>
@@ -154,7 +158,7 @@ const Hero: React.FC = () => {
       {/* Impact Metrics Bar */}
       <section className="container mx-auto px-6 mb-32 relative z-20">
         <FadeIn delay={800}>
-          <div className="glass-module rounded-[2rem] p-10 flex flex-wrap lg:flex-nowrap items-center justify-between gap-8 bg-dark-800/40 backdrop-blur-xl border border-white/5 shadow-2xl">
+          <div className="glass-module rounded-[2rem] p-10 flex flex-wrap lg:flex-nowrap items-center justify-between gap-8 bg-dark-800/40 backdrop-blur-xl border border-white/5 shadow-2xl hover:bg-dark-800/60 transition-colors duration-500">
              <StatItem number="150+" label="C Level Advisory Services" />
              <div className="hidden lg:block w-px h-16 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
              <StatItem number="350+" label="Smart Government Engagements" />
@@ -170,9 +174,9 @@ const Hero: React.FC = () => {
 };
 
 const StatItem: React.FC<{ number: string, label: string }> = ({ number, label }) => (
-  <div className="flex-1 text-center flex flex-col items-center justify-center group">
-    <span className="text-4xl md:text-5xl font-bold text-white block mb-3 tracking-tighter group-hover:text-gold-500 transition-colors duration-500 font-sans">{number}</span>
-    <span className="text-xs text-muted font-medium uppercase tracking-widest opacity-80 font-sans">{label}</span>
+  <div className="flex-1 text-center flex flex-col items-center justify-center group cursor-default">
+    <span className="text-4xl md:text-5xl font-bold text-white block mb-3 tracking-tighter group-hover:text-gold-500 transition-colors duration-500 font-sans transform group-hover:scale-110 transition-transform">{number}</span>
+    <span className="text-xs text-muted font-medium uppercase tracking-widest opacity-80 font-sans group-hover:opacity-100 transition-opacity">{label}</span>
   </div>
 );
 

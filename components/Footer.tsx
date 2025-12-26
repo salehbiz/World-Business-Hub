@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate: (page: string) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-black border-t border-white/5 pt-20 pb-10">
       <div className="container mx-auto px-6">
@@ -27,13 +31,18 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-3 md:col-start-7">
             <h4 className="text-white font-bold mb-6 text-sm tracking-wide uppercase">Company</h4>
             <ul className="space-y-3">
-              {['Home', 'About', 'Team', 'Services', 'Expertise', 'Articles', 'Contact'].map((item) => (
+              {['Home', 'About', 'Team', 'Services', 'Expertise', 'Articles'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-muted hover:text-gold-500 text-[0.85rem] transition-colors block">
+                  <a href={`#${item.toLowerCase()}`} onClick={() => onNavigate(item.toLowerCase() === 'home' ? 'home' : item.toLowerCase())} className="text-muted hover:text-gold-500 text-[0.85rem] transition-colors block">
                     {item}
                   </a>
                 </li>
               ))}
+              <li>
+                <button onClick={() => onNavigate('contact')} className="text-muted hover:text-gold-500 text-[0.85rem] transition-colors block">
+                  Contact
+                </button>
+              </li>
             </ul>
           </div>
 
