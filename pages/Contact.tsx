@@ -1,6 +1,6 @@
 import React from 'react';
 import { FadeIn, Button, SectionModule, GlassCard } from '../components/UI';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
   const handleConsultation = () => {
@@ -57,17 +57,7 @@ export const ContactPage: React.FC = () => {
                         </div>
                         <div>
                            <p className="text-white font-bold mb-1 font-sans">Email Us</p>
-                           <a href="mailto:info@wbh.ae" className="text-muted text-sm font-sans hover:text-gold-500 transition-colors">info@wbh.ae</a>
-                        </div>
-                     </div>
-
-                     <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gold-500 border border-white/10 shrink-0">
-                           <Phone size={18} />
-                        </div>
-                        <div>
-                           <p className="text-white font-bold mb-1 font-sans">Call Us</p>
-                           <p className="text-muted text-sm font-sans">+971 4 123 4567</p>
+                           <a href="mailto:advisor@usmanzafar.com" className="text-muted text-sm font-sans hover:text-gold-500 transition-colors">advisor@usmanzafar.com</a>
                         </div>
                      </div>
                   </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linkedin } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -18,12 +19,16 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Empowering nations and organizations with tailored advisory services, innovative financing structures, and actionable strategies that drive sustainable development.
             </p>
             <div className="flex gap-4">
-              {/* Social placeholders */}
-              {[1, 2, 3].map(i => (
-                <div key={i} className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold-500 hover:text-black transition-colors cursor-pointer border border-white/10">
-                  <div className="w-3.5 h-3.5 bg-current rounded-sm opacity-50"></div>
-                </div>
-              ))}
+              {/* LinkedIn Social Link */}
+              <a 
+                href="https://www.linkedin.com/company/dr-usman-zafar/?viewAsMember=true" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all cursor-pointer border border-white/10"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={16} fill="currentColor" className="stroke-none" />
+              </a>
             </div>
           </div>
 
@@ -56,11 +61,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-gold-500">✉️</span>
-                <a href="mailto:info@wbh.ae" className="hover:text-white">info@wbh.ae</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-gold-500">📞</span>
-                <span>+971 4 123 4567</span>
+                <a href="mailto:advisor@usmanzafar.com" className="hover:text-white">advisor@usmanzafar.com</a>
               </li>
             </ul>
           </div>

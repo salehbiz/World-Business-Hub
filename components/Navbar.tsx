@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                <img 
                  src="https://i.postimg.cc/NMXfkdQq/image-removebg-preview.png" 
                  alt="World Business Hub" 
-                 className="h-10 md:h-12 w-auto object-contain"
+                 className="h-16 md:h-24 w-auto object-contain -my-4 md:-my-6"
                />
              </button>
           </div>

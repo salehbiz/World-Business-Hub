@@ -6,91 +6,91 @@ const teamMembers = [
   {
     name: "Dr. Usman Zafar",
     title: "Founder & CEO",
-    image: "https://wbhholding.com/cdn/shop/files/1756835417480.jpg?v=1758840959&width=600",
+    image: "https://i.postimg.cc/GtkBkNNB/image.png",
     desc: "A globally recognized expert in digital transformation, smart city development, and government advisory. Dr. Zafar brings over 25 years of experience in shaping economic policies and securing multi-million dollar investments for nations worldwide.",
     linkedin: "https://www.linkedin.com/in/drusmanzafar/"
   },
   {
     name: "Shehensha Zaidi",
     title: "International Sales Director",
-    image: "https://wbhholding.com/cdn/shop/files/Shehensha-Zaidi.webp?v=1758843049&width=300",
+    image: "https://i.postimg.cc/d0LLWDpw/image.png",
     desc: "Serves as the International Sales Director, focusing on global market growth.",
     linkedin: ""
   },
   {
     name: "Dr. John Mucheru",
     title: "Director Operations Kenya",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQHnd6lqYxeqig/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1710918521155?e=1768435200&v=beta&t=WoCXVTwe8VvQSsWN7xJh8nuTFgpbTGMywY2SB47qJG8",
+    image: "https://i.postimg.cc/PJkJryx5/image.png",
     desc: "Leads the organization's operational strategies and projects within Kenya.",
     linkedin: "https://www.linkedin.com/in/johnmucheru/"
   },
   {
     name: "Saâd El Fakiri",
     title: "Global Sales Director",
-    image: "https://media.licdn.com/dms/image/v2/C4D03AQHuGCnztIr0tA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1632798000744?e=1768435200&v=beta&t=MUhsOkUpCvgnb0PUKy92ZtzGwJaLTxMOL_PodKNdwnc",
+    image: "https://i.postimg.cc/xTn8w6BY/image.png",
     desc: "Manages global sales initiatives and strategic business development as Global Sales Director.",
     linkedin: "https://www.linkedin.com/in/sisaad/"
   },
   {
     name: "Grey Peña Grullón",
     title: "PM Dominican Republic, Caribbean",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQE3-JXZtV1aGg/profile-displayphoto-shrink_400_400/B4EZOogzzFH0Ak-/0/1733698993972?e=1768435200&v=beta&t=aGYOTG7C8y17G9_ZMCgoQr8m0EzJyEHVdFrN9fz_NKA",
+    image: "https://i.postimg.cc/N09j6S21/image.png",
     desc: "Serves as the Project Manager for the Dominican Republic and Caribbean regions.",
     linkedin: "https://www.linkedin.com/in/grey-pe%C3%B1a-grull%C3%B3n-5223a9186/"
   },
   {
     name: "Dr Kelvin M Majau",
     title: "Director Business Development Kenya",
-    image: "https://wbhholding.com/cdn/shop/files/WhatsApp_Image_2025-09-26_at_01.34.41_1.jpg?v=1758843289&width=300",
+    image: "https://i.postimg.cc/mZN2yQkM/image.png",
     desc: "Drives business expansion and partnership opportunities as Director of Business Development in Kenya.",
     linkedin: ""
   },
   {
     name: "Dr. Rashid Alameri",
     title: "Board Advisor",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQEf20q8JeDfTw/profile-displayphoto-shrink_400_400/B4DZSIlAyKG4Ak-/0/1737458193832?e=1768435200&v=beta&t=b3_n16xgKatQNELIZfDa0C26Xuch2LYLwZaKmrmOspg", 
+    image: "https://i.postimg.cc/3wv34Gz2/image.png", 
     desc: "Provides strategic board-level guidance and high-level advisory support.",
     linkedin: "https://www.linkedin.com/in/rashidalameri/"
   },
   {
     name: "Princess Isabelle Lafforgue",
     title: "Board Advisor",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQH9B9vbhvs-NA/profile-displayphoto-scale_400_400/B56Zegi50GG0Ao-/0/1750745195934?e=1768435200&v=beta&t=GxyNPWNUrQQifleV_zgR_hvSqAghqssoCIKMP9PcqiI",
+    image: "https://i.postimg.cc/3Nnh5F0P/image.png",
     desc: "Offers expert advisory services with a focus on international relations and strategy.",
     linkedin: "https://www.linkedin.com/in/ingrid-vasiliu-feltes-md-mba-4b71121/"
   },
   {
     name: "David Galea",
     title: "Board Advisor",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQGeiAoYPLkm6A/profile-displayphoto-scale_400_400/B4DZq39qnhIkAg-/0/1764022988302?e=1768435200&v=beta&t=9TipTL0al_n5_TBTEItscNY5shO-aH-23PYpbCUJrq8",
+    image: "https://i.postimg.cc/13gQ26mK/image.png",
     desc: "Contributes strategic oversight and organizational guidance as a Board Advisor.",
     linkedin: "https://www.linkedin.com/in/davgalea/"
   },
   {
     name: "Dieter Hovoroka",
     title: "Board Advisor",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQE55K8AYKMTAQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718167057796?e=1768435200&v=beta&t=m4FAqqIMgLgvCGR2oWKz9vF7sBIOvCHwrLOim6RA4fY",
+    image: "https://i.postimg.cc/DZckLP6J/image.png",
     desc: "Serves as a Board Advisor, contributing technical and strategic business insights.",
     linkedin: "https://www.linkedin.com/in/dieterhovorka/"
   },
   {
     name: "Dr. Sonia Saleem",
     title: "Board Advisor",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQFdOjW3bBc0aQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1732717456935?e=1768435200&v=beta&t=5EgdCDc4lMlua5H78s8k-ZqpAWzOW_4IVIRyiuCfDXs",
+    image: "https://i.postimg.cc/qv6PjTw1/image.png",
     desc: "Provides specialized board advisory, likely focusing on her areas of professional expertise.",
     linkedin: "https://www.linkedin.com/in/iamsoniasaleemofficial/"
   },
   {
     name: "Faisal H.Nathoka",
     title: "Board Advisor",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQHwK9wVMF3vjA/profile-displayphoto-shrink_800_800/B4EZbKSrbLHoAc-/0/1747150617900?e=1768435200&v=beta&t=2W8DOHF4kGYv2uoIKNtQMRP2tj1Q4aVq0ZIxtetGKYY",
+    image: "https://i.postimg.cc/Wz4KrLtW/image.png",
     desc: "A multi-faceted consultant and board member with expertise in real estate and training.",
     linkedin: "https://www.linkedin.com/in/faisalnathoka/"
   }
   ,{
     name: "Mr Ronald Kunene",
     title: "Board Advisor",
-    image: "https://wbhholding.com/cdn/shop/files/WhatsApp_Image_2025-09-26_at_01.30.27_1.jpg?v=1758843961&width=300",
+    image: "https://i.postimg.cc/x8qx8vF7/image.png",
     desc: "Offers advisory support, leveraging his experience to guide the group’s initiatives.",
     linkedin: ""
   },
